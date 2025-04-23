@@ -1,0 +1,5 @@
+.strike-through input {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
