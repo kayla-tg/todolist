@@ -1,18 +1,17 @@
 export function toggleEdit(todoId) {
-    const descEl = document.getElementById(`desc_${todoId}`);
-    const formEl = document.getElementById(`form_${todoId}`);
-    const buttonEl = document.getElementById(`edit_button_${todoId}`);
+    const input = document.getElementById(`input_${todoId}`);
+    const button = document.getElementById(`edit_button_${todoId}`);
+    const form = document.getElementById(`form_${todoId}`);
   
-    const isEditing = formEl.classList.contains("hidden") === false;
+    const isEditing = !input.disabled;
   
     if (isEditing) {
-      // Submit the form when saving
-      formEl.querySelector("form").requestSubmit();
+        form.requestSubmit();
+        input.disabled = true;
     } else {
-      // Toggle view to editing mode
-      descEl.classList.add("hidden");
-      formEl.classList.remove("hidden");
-      buttonEl.textContent = "Save";
+        input.disabled = false;
+        input.focus();
+        button.textContent = "Save";
     }
-  }
+}
   
