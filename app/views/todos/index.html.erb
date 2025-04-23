@@ -15,8 +15,10 @@
     <tr>
       <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">ID</th>
       <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Description</th>
+      <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Action</th>
     </tr>
   </thead>
+
   <tbody>
     <% @todos.each do |todo| %>
       <tr>
@@ -25,6 +27,9 @@
         </td>
         <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
           <%= todo.description %>
+        </td>
+        <td class="px-3 py-4 text-sm font-normal text-left text-red-600 underline break-words bg-light">
+          <%= button_to "Delete", todo_path(todo), method: :delete %>
         </td>
       </tr>
     <% end %>
