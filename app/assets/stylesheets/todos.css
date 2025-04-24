@@ -93,25 +93,5 @@ button[type="button"], .delete-button {
   
 .delete-button:hover {
     color: #dc2626;
-}
-  
-.progress {
-    background-color: #e5e5e5;
-    height: 20px;
-    width: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 1rem auto;
-}
-  
-.progress-fill {
-    background-color: #7cd33c;
-    height: 100%;
-    width: 60%; 
-    text-align: center;
-    color: white;
-    font-size: 0.8rem;
-    line-height: 20px;
-}
-  
+}  
   
