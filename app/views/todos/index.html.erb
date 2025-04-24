@@ -11,41 +11,41 @@
   <% end %>
 
   <% if @todos.any? %>
-    <table class="mx-auto bg-white rounded-lg p-4 shadow-md w-fit">
+    <table>
       <tbody id="todo-list">
         <% @todos.each do |todo| %>
           <tr data-id="<%= todo.id %>" class="cursor-move">
-            <td>
+            <td class="align-middle">
               <%= form_with(model: todo, url: todo_path(todo), method: :patch, local: true, id: "form_#{todo.id}") do |f| %>
-                <input
-                  type="checkbox"
-                  id="checkbox_<%= todo.id %>"
-                  <%= "checked" if todo.completed? %>
-                  onchange="toggleStrikeThrough(<%= todo.id %>)"
-                />
+                <div class="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="checkbox_<%= todo.id %>"
+                    <%= "checked" if todo.completed? %>
+                    onchange="toggleStrikeThrough(<%= todo.id %>)"
+                  />
 
-                <span id="description_wrapper_<%= todo.id %>">
-                  <%= f.text_field :description,
-                                  id: "input_#{todo.id}",
-                                  value: todo.description,
-                                  class: "border rounded px-2 py-1 text-sm w-full",
-                                  disabled: true %>
-                </span>
+                  <span id="description_wrapper_<%= todo.id %>">
+                    <%= f.text_field :description,
+                                    id: "input_#{todo.id}",
+                                    value: todo.description,
+                                    class: "px-2 py-1 text-sm w-full",
+                                    disabled: true %>
+                  </span>
 
-                <button
-                  type="button"
-                  id="edit_button_<%= todo.id %>"
-                  onclick="toggleEdit(<%= todo.id %>)"
-                  class="text-blue-600 underline text-sm"
-                >
-                  <i class="fas fa-pen"></i>
-                </button>
-              <% end %>
-            </td>
+                  <button
+                    type="button"
+                    id="edit_button_<%= todo.id %>"
+                    onclick="toggleEdit(<%= todo.id %>)"
+                    class="text-blue-600 underline text-sm"
+                  >
+                    <i class="fas fa-pen"></i>
+                  </button>
 
-            <td>
-              <%= button_to todo_path(todo), method: :delete, class: "delete-button" do %>
-                <i class="fa-solid fa-trash"></i>
+                  <%= button_to todo_path(todo), method: :delete, class: "delete-button" do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+                </div>
               <% end %>
             </td>
           </tr>

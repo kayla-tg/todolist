@@ -19,7 +19,6 @@ form {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    gap: 0.5rem;
 }
   
 input[type="text"] {
@@ -43,16 +42,16 @@ input[type="submit"]:hover, button:hover {
   
 table {
     margin: 0 auto;
-    background-color: white;
-    border-radius: 6px;
-    padding: 1rem;
-    width: fit-content;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-  
-td {
-    padding: 0.5rem;
-    vertical-align: middle;
+
+tr {
+    display: flex;
+    padding: 10px;
+    width: fit-content;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;   
+    margin: 20px;
 }
   
 input[type="checkbox"] {
@@ -87,7 +86,6 @@ button[type="button"], .delete-button {
     background: none;
     color: red;
     border: none;
-    padding: 0.4rem 0.7rem;
     font-size: 0.8rem;
 }
   
