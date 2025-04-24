@@ -18,6 +18,9 @@
             <td class="align-middle">
               <%= form_with(model: todo, url: todo_path(todo), method: :patch, local: true, id: "form_#{todo.id}") do |f| %>
                 <div class="flex items-center gap-2">
+                   <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 320 512" fill="#888">
+                <path d="M96 96a32 32 0 1 1-64 0 32 32 0 0 1 64 0zm0 160a32 32 0 1 1-64 0 32 32 0 0 1 64 0zm0 160a32 32 0 1 1-64 0 32 32 0 0 1 64 0zM288 96a32 32 0 1 1-64 0 32 32 0 0 1 64 0zm0 160a32 32 0 1 1-64 0 32 32 0 0 1 64 0zm0 160a32 32 0 1 1-64 0 32 32 0 0 1 64 0z"/>
+              </svg>
                   <input
                     type="checkbox"
                     id="checkbox_<%= todo.id %>"
