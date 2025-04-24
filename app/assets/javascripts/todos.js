@@ -29,4 +29,26 @@ function toggleStrikeThrough(todoId) {
       wrapper.classList.remove("strike-through");
       button.disabled = false;
     }
-  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const list = document.getElementById("todo-list");
+    if (!list) return;
+  
+    new Sortable(list, {
+        animation: 150,
+        handle: "tr", // the entire row is draggable
+        onEnd: function (evt) {
+            const ids = Array.from(list.children).map(row => row.dataset.id);
+    
+            fetch("/todos/reorder", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-Token": document.querySelector("[name='csrf-token']").content
+            },
+            body: JSON.stringify({ order: ids })
+            });
+        }
+    });
+});

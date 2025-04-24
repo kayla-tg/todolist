@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.order(:created_at)
+    @todos = Todo.order(:position, :created_at)
   end
 
   def create
@@ -26,6 +26,13 @@ class TodosController < ApplicationController
     @todo.destroy
     redirect_to todos_path
   end
+
+  def sort
+    params[:order].each_with_index do |id, index|
+      Todo.where(id: id).update_all(position: index + 1)
+    end
+    head :ok
+  end  
 
   private
 
