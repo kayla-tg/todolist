@@ -30,16 +30,15 @@ input[type="text"] {
 }
   
 input[type="submit"], button {
-    padding: 0.5rem 1rem;
-    background-color: #5ba4cf;
-    color: white;
+    padding: 0.5rem 0.75rem;
+    color: #5ba4cf;
+    background-color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
   
 input[type="submit"]:hover, button:hover {
-    background-color: #3a8abf;
+    color: #3a8abf;
 }
   
 table {
@@ -87,7 +86,7 @@ button[type="button"], .delete-button {
 .delete-button {
     background: none;
     color: red;
-    border-radius: 4px;
+    border: none;
     padding: 0.4rem 0.7rem;
     font-size: 0.8rem;
 }
@@ -108,7 +107,7 @@ button[type="button"], .delete-button {
 .progress-fill {
     background-color: #7cd33c;
     height: 100%;
-    width: 60%; /* Dynamic, based on task completion */
+    width: 60%; 
     text-align: center;
     color: white;
     font-size: 0.8rem;

@@ -5,7 +5,9 @@
 
   <%= form_with(model: Todo.new, local: true) do |form| %>
     <%= form.text_field :description, placeholder: "What needs to be done?" %>
-    <%= form.submit "Add Todo" %>
+    <%= form.button type: "submit" do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
   <% end %>
 
   <% if @todos.any? %>
