@@ -27,7 +27,7 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
-  def sort
+  def reorder
     params[:order].each_with_index do |id, index|
       Todo.where(id: id).update_all(position: index + 1)
     end
